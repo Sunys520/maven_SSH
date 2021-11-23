@@ -17,6 +17,7 @@ public class PersonAction {
 
     public String findAll(){
         list = personService.findAll();
+        System.out.println("测试修改了");
         return "list";
     }
 
