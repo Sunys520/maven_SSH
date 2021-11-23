@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!-- action容器，通过package可以统一配置容器内全部action的全局配置 -->
+    <package name="demo" namespace="/" extends="struts-default">
+        <!-- action中的name:action的名称，包内唯一，访问该action的路径 -->
+        <action name="person_*" class="com.icss.maven_ssh.action.PersonAction" method="{1}">
+            <result name="list">/personList.jsp</result>
+            <!-- struts2.3之后，无论是动态方法访问action和通配符访问action，都需要加上<allowed-methods>标签。多个方法用逗号隔开 -->
+            <allowed-methods>findAll</allowed-methods>
+        </action>
+    </package>
+</struts>
